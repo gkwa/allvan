@@ -19,7 +19,7 @@ tasks:
     silent: true
   import-task-schema:
     cmds:
-    - cue import --path '#task:' --package task schema.json
+    - cue import --path '#task:' --package task schema.json --force
   get-schema:
     cmds:
     - curl -LO https://raw.githubusercontent.com/go-task/task/main/website/static/schema.json
