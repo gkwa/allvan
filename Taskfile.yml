@@ -28,7 +28,7 @@ tasks:
     cmds:
     - rm -f schema.cue
     status:
-    - ! test -s schema.cue
+    - bash -c '! test -s schema.cue'
   diff:
     cmds:
     - diff -uw schema.json schema-workaround.json || true
@@ -38,7 +38,7 @@ tasks:
     - cue vet -d '#task' schema.cue Taskfile.yml
   import-task-schema:
     cmds:
-    - cue import --force --outfile=schema.cue --simplify --path='#task:' --package=task schema.json 
+    - cue import --force --outfile=schema.cue --simplify --path='#task:' --package=task schema.json
   import-task-schema-workaround:
     cmds:
     - cue import --force --outfile=schema.cue --simplify --path='#task:' --package=task schema-workaround.json
