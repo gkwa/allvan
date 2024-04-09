@@ -4,10 +4,9 @@ version: '3'
 
 vars:
   GREETING: Hello, World!
+  OUTPUT: prefixed
 
 
-options:
-  output: prefixed
 
 tasks:
   default:
