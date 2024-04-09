@@ -32,6 +32,10 @@ tasks:
   diff:
     cmds:
     - diff -uw schema.json schema-workaround.json || true
+  vet:
+    cmds:
+    - task: happy
+    - cue vet -d '#task' schema.cue Taskfile.yml
   import-task-schema:
     cmds:
     - cue import --force --outfile=schema.cue --simplify --path='#task:' --package=task schema.json 
