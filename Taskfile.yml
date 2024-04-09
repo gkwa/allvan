@@ -11,6 +11,8 @@ tasks:
       - task: get-schema
       - task: get-versions
       - task: import-task-schema
+    deps:
+      - git-ensure-clean
   default-old:
     cmds:
       - echo "{{.GREETING}}"
@@ -28,3 +30,9 @@ tasks:
     cmds:
       - task --version
       - cue version
+  git-ensure-clean:
+    cmds:
+      - test -z "$(git status --porcelain)"
+
+
+
