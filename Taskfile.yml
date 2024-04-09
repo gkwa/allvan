@@ -27,6 +27,7 @@ tasks:
   clean:
     cmds:
     - rm -f schema.cue
+    - rm -f vet.log
     status:
     - bash -c '! test -s schema.cue'
   diff:
@@ -35,7 +36,7 @@ tasks:
   vet:
     cmds:
     - task: happy
-    - cue vet -d '#task' schema.cue Taskfile.yml
+    - cue vet -d '#task' schema.cue Taskfile.yml | tee vet.log
   import-task-schema:
     cmds:
     - cue import --force --outfile=schema.cue --simplify --path='#task:' --package=task schema.json
