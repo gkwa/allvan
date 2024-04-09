@@ -19,6 +19,7 @@ tasks:
 
   setup:
     cmds:
+    - task: clean
     - task: get-schema
     - task: get-versions
     deps:
@@ -36,6 +37,12 @@ tasks:
     cmds:
     - echo "{{.GREETING}}"
     silent: true
+
+  clean:
+    cmds:
+    - rm -f schema.cue
+
+
   import-task-schema:
     cmds:
     - cue import --path '#task:' --package task schema.json --force
