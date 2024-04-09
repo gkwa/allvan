@@ -9,17 +9,18 @@ tasks:
 
   happy:
     cmds:
-    - task: get-schema
-    - task: get-versions
+    - task: setup
     - task: import-task-schema-workaround
-    deps:
-    - git-ensure-clean
-
   sad:
+    cmds:
+    - task: setup
+    - task: import-task-schema
+
+
+  setup:
     cmds:
     - task: get-schema
     - task: get-versions
-    - task: import-task-schema
     deps:
     - git-ensure-clean
 
