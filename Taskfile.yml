@@ -10,6 +10,7 @@ tasks:
     cmds:
     - task: setup
     - task: import-task-schema-workaround
+    - test -s schema.cue
   sad:
     cmds:
     - task: setup
