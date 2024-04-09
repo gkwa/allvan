@@ -4,8 +4,9 @@ version: '3'
 
 vars:
   GREETING: Hello, World!
-  NO_COLOR: 1
 
+env:
+- NO_COLOR: 1
 
 output: prefixed
 
