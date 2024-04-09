@@ -36,7 +36,7 @@ tasks:
   vet:
     cmds:
     - task: happy
-    - cue vet -d '#task' schema.cue Taskfile.yml 2>&1 | tee vet.log
+    - cue vet -d '#task' schema.cue Taskfile-test.yml 2>&1 | tee vet.log
   import-task-schema:
     cmds:
     - cue import --force --outfile=schema.cue --simplify --path='#task:' --package=task schema.json
