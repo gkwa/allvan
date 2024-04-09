@@ -5,6 +5,7 @@ version: '3'
 vars:
   GREETING: Hello, World!
   OUTPUT: prefixed
+  CLI_ARGS: --output=prefixed
 
 
 
