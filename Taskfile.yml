@@ -1,46 +1,33 @@
-# https://taskfile.dev
-
-version: '3'
-
+version: "3"
 vars:
   GREETING: Hello, World!
-
-
-
 env:
   NO_COLOR: 1
-
-
 output: prefixed
-
 tasks:
   default:
     cmds:
-      - task: get-schema
-      - task: get-versions
-      - task: import-task-schema
+    - task: get-schema
+    - task: get-versions
+    - task: import-task-schema
     deps:
-      - git-ensure-clean
+    - git-ensure-clean
   default-old:
     cmds:
-      - echo "{{.GREETING}}"
+    - echo "{{.GREETING}}"
     silent: true
   import-task-schema:
     cmds:
     - cue import --path '#task:' --package task schema.json
   get-schema:
     cmds:
-      # - curl -LO https://taskfile.dev/schema.json
-      - curl -LO https://raw.githubusercontent.com/go-task/task/main/website/static/schema.json
+    - curl -LO https://raw.githubusercontent.com/go-task/task/main/website/static/schema.json
     status:
-      - test -f schema.json
+    - test -f schema.json
   get-versions:
     cmds:
-      - task --version
-      - cue version
+    - task --version
+    - cue version
   git-ensure-clean:
     cmds:
-      - test -z "$(git status --porcelain)"
-
-
-
+    - test -z "$(git status --porcelain)"
