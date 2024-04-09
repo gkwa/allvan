@@ -22,7 +22,7 @@ tasks:
     - task: sad
   hello:
     cmds:
-    - echo "{{.GREETING}}"
+    - echo foo
     silent: true
   clean:
     cmds:
