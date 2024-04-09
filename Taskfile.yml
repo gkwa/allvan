@@ -6,7 +6,7 @@ vars:
   GREETING: Hello, World!
 
 env:
-- NO_COLOR: 1
+  NO_COLOR: 1
 
 output: prefixed
 
