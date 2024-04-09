@@ -6,7 +6,6 @@ env:
   COLOR: false
 output: prefixed
 tasks:
-
   happy:
     cmds:
     - task: setup
@@ -15,8 +14,6 @@ tasks:
     cmds:
     - task: setup
     - task: import-task-schema
-
-
   setup:
     cmds:
     - task: clean
@@ -24,8 +21,6 @@ tasks:
     - task: get-versions
     deps:
     - git-ensure-clean
-
-
   default:
     cmds:
     - task: get-schema
@@ -37,12 +32,9 @@ tasks:
     cmds:
     - echo "{{.GREETING}}"
     silent: true
-
   clean:
     cmds:
     - rm -f schema.cue
-
-
   import-task-schema:
     cmds:
     - cue import --path '#task:' --package task schema.json --force
