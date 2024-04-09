@@ -36,7 +36,7 @@
     },
     "task": {
       "type": "object",
-      "additionalProperties": {},
+      "additionalProperties": false,
       "properties": {
         "cmds": {
           "description": "A list of commands to be executed.",
@@ -286,7 +286,7 @@
           "type": "string",
           "description": "The value will parsed as a YAML string and stored in the variable"
         },
-        "additionalProperties": false
+        "additionalProperties": {}
       }
     },
     "task_call": {
