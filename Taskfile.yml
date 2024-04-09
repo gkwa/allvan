@@ -13,7 +13,7 @@ tasks:
     - task: import-task-schema
     deps:
     - git-ensure-clean
-  default-old:
+  hello:
     cmds:
     - echo "{{.GREETING}}"
     silent: true
