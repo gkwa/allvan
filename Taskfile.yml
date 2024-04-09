@@ -1,9 +1,4 @@
 version: "3"
-vars:
-  GREETING: Hello, World!
-env:
-  NO_COLOR: 1
-  COLOR: false
 output: prefixed
 tasks:
   happy:
