@@ -11,6 +11,7 @@ tasks:
     - task: get-schema
     - task: get-versions
     - task: import-task-schema
+    - task: highlight-offending-lines
     deps:
     - git-ensure-clean
   hello:
@@ -32,3 +33,7 @@ tasks:
   git-ensure-clean:
     cmds:
     - test -z "$(git status --porcelain)"
+  highlight-offending-lines:
+    cmds:
+    - nl schema.json | sed -n '284,294p' | awk '{ if ($1 == "289") printf "\033[1;31m"; print $0 "\033[0m" }'
+    - nl schema.json | sed -n '570,580p' | awk '{ if ($1 == "575") printf "\033[1;31m"; print $0 "\033[0m" }'
