@@ -27,6 +27,8 @@ tasks:
   clean:
     cmds:
     - rm -f schema.cue
+    status:
+    - ! test -s schema.cue
   diff:
     cmds:
     - diff -uw schema.json schema-workaround.json || true
