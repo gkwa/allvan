@@ -9,6 +9,7 @@ tasks:
   default:
     cmds:
       - task: get-schema
+      - task: get-versions
       - task: import-task-schema
   default-old:
     cmds:
@@ -16,10 +17,14 @@ tasks:
     silent: true
   import-task-schema:
     cmds:
-    - cue import -l '#task:' --package task schema.json
+    - cue import --path '#task:' --package task schema.json
   get-schema:
     cmds:
       # - curl -LO https://taskfile.dev/schema.json
       - curl -LO https://raw.githubusercontent.com/go-task/task/main/website/static/schema.json
     status:
       - test -f schema.json
+  get-versions:
+    cmds:
+      - task --version
+      - cue version
