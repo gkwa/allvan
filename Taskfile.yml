@@ -11,7 +11,6 @@ tasks:
     - task: get-schema
     - task: get-versions
     - task: import-task-schema
-    - task: highlight-offending-lines
     deps:
     - git-ensure-clean
   hello:
