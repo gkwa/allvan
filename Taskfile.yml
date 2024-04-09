@@ -38,10 +38,10 @@ tasks:
     - rm -f schema.cue
   import-task-schema:
     cmds:
-    - cue import --simplify --path '#task:' --package task schema.json --force
+    - cue import --outfile=schema.cue --simplify --path '#task:' --package task schema.json --force
   import-task-schema-workaround:
     cmds:
-    - cue import --simplify --path '#task:' --package task schema-workaround.json --force
+    - cue import --outfile=schema.cue --simplify --path '#task:' --package task schema-workaround.json --force
   get-schema:
     cmds:
     - curl -LO https://raw.githubusercontent.com/go-task/task/main/website/static/schema.json
