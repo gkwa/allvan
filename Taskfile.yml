@@ -8,6 +8,8 @@ vars:
   CLI_ARGS: --output=prefixed
 
 
+output: prefixed
+
 
 tasks:
   default:
