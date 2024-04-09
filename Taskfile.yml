@@ -19,7 +19,7 @@ tasks:
     - git-ensure-clean
   default:
     cmds:
-    - task: sad
+    - task: vet
   hello:
     cmds:
     - echo foo
