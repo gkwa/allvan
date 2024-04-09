@@ -19,11 +19,7 @@ tasks:
     - git-ensure-clean
   default:
     cmds:
-    - task: get-schema
-    - task: get-versions
-    - task: import-task-schema
-    deps:
-    - git-ensure-clean
+    - task: sad
   hello:
     cmds:
     - echo "{{.GREETING}}"
