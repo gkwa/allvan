@@ -1,0 +1,25 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - task: get-schema
+      - task: import-task-schema
+  default-old:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+  import-task-schema:
+    cmds:
+    - cue import -l '#task:' --package task schema.json
+  get-schema:
+    cmds:
+      # - curl -LO https://taskfile.dev/schema.json
+      - curl -LO https://raw.githubusercontent.com/go-task/task/main/website/static/schema.json
+    status:
+      - test -f schema.json
